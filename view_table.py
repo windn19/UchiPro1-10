@@ -23,6 +23,7 @@ class Contacts(QMainWindow):
             self.view.setRowCount(rows + 1)
             for i in range(count):
                 self.view.setItem(rows, i, QTableWidgetItem(str(query.value(i))))
+
         self.view.resizeColumnsToContents()
         self.setCentralWidget(self.view)
 

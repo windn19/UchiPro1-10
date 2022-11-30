@@ -13,6 +13,7 @@ class Contacts(QMainWindow):
         self.text = QTextEdit()
         self.btn = QPushButton('Выполнить')
         self.btn.clicked.connect(self.click_btn)
+
         self.view = QTableWidget()
         vbox.addWidget(self.text)
         vbox.addWidget(self.btn)
@@ -39,6 +40,7 @@ class Contacts(QMainWindow):
                 self.view.setRowCount(rows + 1)
                 for i in range(count):
                     self.view.setItem(rows, i, QTableWidgetItem(str(query.value(i))))
+
             self.view.resizeColumnsToContents()
         else:
             QMessageBox.warning(None, 'Запрос', 'Введенный запрос содержит ошибки', QMessageBox.Ok)
